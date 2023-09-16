@@ -29,3 +29,18 @@ $(document).ready(function () {
   }
 
   loadMostRecent()
+
+  //function to load recently searched cities from local storage
+  function loadRecentCities() {
+    let recentCities = JSON.parse(localStorage.getItem("cities"));
+
+    if (recentCities) {
+      cities = recentCities;
+    } else {
+      cities = [];
+    }
+  }
+
+  loadRecentCities()
+
+  
