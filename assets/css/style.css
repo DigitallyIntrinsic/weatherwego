@@ -37,3 +37,12 @@
       #fa8231
     );
   }
+
+  .title {
+    color: #fff;
+  }
+  
+  #submit {
+    width: 100%;
+    margin-bottom: 20px;
+  }
