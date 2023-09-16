@@ -108,24 +108,43 @@ $(document).ready(function () {
             alert("Could not get data")
         });
 
-         //Function to get 5-day forecast and UV index and put them on page
-    function getUV(lat, lon) {
-     
-        
-        $.ajax({
-          url: "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly" + "&units=imperial&appid=8ee89712118d46daccafa698899c14e0",
-          method: "GET",
-        }).then(function (response) {
-  
-          //code to determine UV index severity
-          let uvIndex = response.current.uvi;
-          $("#uv-index").text("UV Index:" + " " + uvIndex);
-          if (uvIndex >= 8) {
-            $("#uv-index").css("color", "red");
-          } else if (uvIndex > 4 && uvIndex < 8) {
-            $("#uv-index").css("color", "yellow");
-          } else {
-            $("#uv-index").css("color", "green");
-          }
-          let cityHigh = response.daily[0].temp.max;
-          $("#high").text("Expected high (F): " + " " + cityHigh);
+        //Function to get 5-day forecast and UV index and put them on page
+        function getUV(lat, lon) {
+
+
+            $.ajax({
+                url: "https://api.openweathermap.org/data/3.0/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely,hourly" + "&units=imperial&appid=8ee89712118d46daccafa698899c14e0",
+                method: "GET",
+            }).then(function (response) {
+
+                //code to determine UV index severity
+                let uvIndex = response.current.uvi;
+                $("#uv-index").text("UV Index:" + " " + uvIndex);
+                if (uvIndex >= 8) {
+                    $("#uv-index").css("color", "red");
+                } else if (uvIndex > 4 && uvIndex < 8) {
+                    $("#uv-index").css("color", "yellow");
+                } else {
+                    $("#uv-index").css("color", "green");
+                }
+                let cityHigh = response.daily[0].temp.max;
+                $("#high").text("Expected high (F): " + " " + cityHigh);
+
+                //forecast temp variables
+                let day1temp = response.daily[1].temp.max;
+                let day2temp = response.daily[2].temp.max;
+                let day3temp = response.daily[3].temp.max;
+                let day4temp = response.daily[4].temp.max;
+                let day5temp = response.daily[5].temp.max;
+                //forecast humidity variables
+                let day1hum = response.daily[1].humidity;
+                let day2hum = response.daily[2].humidity;
+                let day3hum = response.daily[3].humidity;
+                let day4hum = response.daily[4].humidity;
+                let day5hum = response.daily[5].humidity;
+                //forecast weather icon variables
+                let icon1 = response.daily[1].weather[0].icon;
+                let icon2 = response.daily[2].weather[0].icon;
+                let icon3 = response.daily[3].weather[0].icon;
+                let icon4 = response.daily[4].weather[0].icon;
+                let icon5 = response.daily[5].weather[0].icon;
