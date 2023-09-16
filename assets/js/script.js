@@ -59,19 +59,24 @@ $(document).ready(function () {
         localStorage.setItem("cities", JSON.stringify(cities));
     }
 
-      // grab user city input
-  function getCity() {
-    city = $("#city-input").val();
-    if (city && cities.includes(city) === false) {
-      saveToLocalStorage();
-      return city;
-    } else if (!city) {
-      alert("Please enter a valid city");
+    // grab user city input
+    function getCity() {
+        city = $("#city-input").val();
+        if (city && cities.includes(city) === false) {
+            saveToLocalStorage();
+            return city;
+        } else if (!city) {
+            alert("Please enter a valid city");
+        }
     }
-  }
 
     // city search using the API Key
     function search() {
-    
+
         let queryURL = "https://api.openweathermap.org/data/3.0/weather?q=" + city + "&units=imperial&appid=8ee89712118d46daccafa698899c14e0";
         let coords = [];
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
