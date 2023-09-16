@@ -80,3 +80,30 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET",
         }).then(function (response) {
+
+            coords.push(response.coord.lat);
+            coords.push(response.coord.lon);
+            let cityName = response.name;
+            let cityCond = response.weather[0].description.toUpperCase();
+            let cityTemp = response.main.temp;
+            let cityHum = response.main.humidity;
+            let cityWind = response.wind.speed;
+            let icon = response.weather[0].icon;
+            $("#icon").html(
+                `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`
+            );
+            $("#city-name").html(cityName + " " + "(" + NowMoment + ")");
+            $("#city-cond").text("Current Conditions: " + cityCond);
+            $("#temp").text("Current Temp (F): " + cityTemp.toFixed(1));
+            $("#humidity").text("Humidity: " + cityHum + "%");
+            $("#wind-speed").text("Wind Speed: " + cityWind + "mph");
+            $("#date1").text(day1);
+            $("#date2").text(day2);
+            $("#date3").text(day3);
+            $("#date4").text(day4);
+            $("#date5").text(day5);
+
+            getUV(response.coord.lat, response.coord.lon);
+        }).fail(function () {
+            alert("Could not get data")
+        });
