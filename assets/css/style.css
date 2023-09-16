@@ -13,3 +13,27 @@
   .table-box {
     background-color:#4b6584;
   }
+
+  tr {
+    margin: 5px;
+  }
+  
+  .card {
+    background-color: #a5b1c2;
+    margin: 3px;
+    min-height: 300px;
+  }
+  
+  .hero {
+    background: #fa8231; /* support for alternate browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #eb3b5a,
+      #fa8231
+    );
+    background: linear-gradient(
+      to right,
+      #eb3b5a,
+      #fa8231
+    );
+  }
