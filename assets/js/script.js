@@ -190,3 +190,21 @@ $(document).ready(function () {
             $("#cityList").prepend("<tr><td>" + city + "</td></tr>");
         });
     }
+
+    listCities();
+
+    //  event handler for recently searched cities in table
+      $(document).on("click", "td", (e) => {
+        e.preventDefault();
+        let listedCity = $(e.target).text();
+        city = listedCity;
+        search();
+      });
+      
+    //  event handler for clear button
+      $("#clr-btn").click(() => {
+        localStorage.removeItem("cities");
+        loadRecentCities();
+        listCities();
+      });
+    });
