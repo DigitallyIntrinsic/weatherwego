@@ -69,3 +69,9 @@ $(document).ready(function () {
       alert("Please enter a valid city");
     }
   }
+
+    // city search using the API Key
+    function search() {
+    
+        let queryURL = "https://api.openweathermap.org/data/3.0/weather?q=" + city + "&units=imperial&appid=8ee89712118d46daccafa698899c14e0";
+        let coords = [];
