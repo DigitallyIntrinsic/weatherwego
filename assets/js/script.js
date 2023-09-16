@@ -16,31 +16,38 @@ $(document).ready(function () {
     let city;
     let cities;
 
-     //function to load most recently searched city from local storage
-  function loadMostRecent() {
-    let lastSearch = localStorage.getItem("mostRecent");
-    if (lastSearch) {
-      city = lastSearch;
-      search();
-    } else {
-      city = "San Diego";
-      search();
+    //function to load most recently searched city from local storage
+    function loadMostRecent() {
+        let lastSearch = localStorage.getItem("mostRecent");
+        if (lastSearch) {
+            city = lastSearch;
+            search();
+        } else {
+            city = "San Diego";
+            search();
+        }
     }
-  }
 
-  loadMostRecent()
+    loadMostRecent()
 
-  //function to load recently searched cities from local storage
-  function loadRecentCities() {
-    let recentCities = JSON.parse(localStorage.getItem("cities"));
+    //function to load recently searched cities from local storage
+    function loadRecentCities() {
+        let recentCities = JSON.parse(localStorage.getItem("cities"));
 
-    if (recentCities) {
-      cities = recentCities;
-    } else {
-      cities = [];
+        if (recentCities) {
+            cities = recentCities;
+        } else {
+            cities = [];
+        }
     }
-  }
 
-  loadRecentCities()
+    loadRecentCities()
 
-  
+    //event handler for search city button
+    $("#submit").on("click", (e) => {
+        e.preventDefault();
+        getCity();
+        search();
+        $("#city-input").val("");
+        listCities();
+    });
