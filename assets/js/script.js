@@ -51,3 +51,10 @@ $(document).ready(function () {
         $("#city-input").val("");
         listCities();
     });
+
+    //function to save searched cities to local storage
+    function saveToLocalStorage() {
+        localStorage.setItem("mostRecent", city);
+        cities.push(city);
+        localStorage.setItem("cities", JSON.stringify(cities));
+    }
