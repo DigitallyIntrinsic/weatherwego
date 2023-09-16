@@ -15,3 +15,17 @@ $(document).ready(function () {
     // add global variables
     let city;
     let cities;
+
+     //function to load most recently searched city from local storage
+  function loadMostRecent() {
+    let lastSearch = localStorage.getItem("mostRecent");
+    if (lastSearch) {
+      city = lastSearch;
+      search();
+    } else {
+      city = "San Diego";
+      search();
+    }
+  }
+
+  loadMostRecent()
