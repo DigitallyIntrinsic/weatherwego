@@ -145,6 +145,9 @@ $(document).ready(function () {
                 let day4hum = response.daily[4].humidity;
                 let day5hum = response.daily[5].humidity;
 
+                // forecast wind variables
+                let day1wind = response.daily[1].speed;
+
                 // forecast weather icon variables
                 let icon1 = response.daily[1].weather[0].icon;
                 let icon2 = response.daily[2].weather[0].icon;
@@ -163,6 +166,8 @@ $(document).ready(function () {
                 $("#hum3").text("Hum:" + " " + day3hum + "%");
                 $("#hum4").text("Hum:" + " " + day4hum + "%");
                 $("#hum5").text("Hum:" + " " + day5hum + "%");
+
+                $("#wind1").text("Wind Speed: " + day1wind + "mph");
 
                 $("#icon1").html(
                     `<img src="http://openweathermap.org/img/wn/${icon1}@2x.png">`
