@@ -1,6 +1,6 @@
 # WheatherWeGo: A weather app
 
-  Deployable Link - > https://digitallyintrinsic.github.io/weatherwego/
+  [A deployed version can be viewed here.](https://digitallyintrinsic.github.io/weatherwego/)
 
 
 ## Table of Contents: 
