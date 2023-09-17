@@ -28,13 +28,13 @@
     background: #fa8231; /* support for alternate browsers */
     background: -webkit-linear-gradient(
       to right,
-      #eb3b5a,
-      #fa8231
+      #e87509,
+      #efdf06
     );
     background: linear-gradient(
       to right,
-      #eb3b5a,
-      #fa8231
+      #e87509,
+      #efdf06
     );
   }
 
