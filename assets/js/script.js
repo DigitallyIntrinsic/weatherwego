@@ -91,13 +91,13 @@ $(document).ready(function () {
             let cityWind = response.wind.speed;
             let icon = response.weather[0].icon;
             $("#icon").html(
-                `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`
+                `<img src="https://openweathermap.org/img/wn/${icon}@2x.png">`
             );
             $("#city-name").html(cityName + " " + "(" + NowMoment + ")");
             $("#city-cond").text("Current Conditions: " + cityCond);
             $("#temp").text("Current Temp (F): " + cityTemp.toFixed(1));
             $("#humidity").text("Humidity: " + cityHum + "%");
-            $("#wind-speed").text("Wind Speed: " + cityWind + "mph");
+            $("#wind-speed").text("Wind Speed: " + cityWind + " mph");
             $("#date1").text(day1);
             $("#date2").text(day2);
             $("#date3").text(day3);
@@ -146,7 +146,11 @@ $(document).ready(function () {
                 let day5hum = response.daily[5].humidity;
 
                 // forecast wind variables
-                let day1wind = response.daily[1].speed;
+                let day1wind = response.daily[1].wind;
+                let day2wind = response.daily[2].wind;
+                let day3wind = response.daily[3].wind;
+                let day4wind = response.daily[4].wind;
+                let day5wind = response.daily[5].wind;
 
                 // forecast weather icon variables
                 let icon1 = response.daily[1].weather[0].icon;
@@ -168,21 +172,25 @@ $(document).ready(function () {
                 $("#hum5").text("Hum:" + " " + day5hum + "%");
 
                 $("#wind1").text("Wind Speed: " + day1wind + "mph");
+                $("#wind2").text("Wind Speed: " + day1wind + "mph");
+                $("#wind3").text("Wind Speed: " + day1wind + "mph");
+                $("#wind4").text("Wind Speed: " + day1wind + "mph");
+                $("#wind5").text("Wind Speed: " + day1wind + "mph");
 
                 $("#icon1").html(
-                    `<img src="http://openweathermap.org/img/wn/${icon1}@2x.png">`
+                    `<img src="https://openweathermap.org/img/wn/${icon1}@2x.png">`
                 );
                 $("#icon2").html(
-                    `<img src="http://openweathermap.org/img/wn/${icon2}@2x.png">`
+                    `<img src="https://openweathermap.org/img/wn/${icon2}@2x.png">`
                 );
                 $("#icon3").html(
-                    `<img src="http://openweathermap.org/img/wn/${icon3}@2x.png">`
+                    `<img src="https://openweathermap.org/img/wn/${icon3}@2x.png">`
                 );
                 $("#icon4").html(
-                    `<img src="http://openweathermap.org/img/wn/${icon4}@2x.png">`
+                    `<img src="https://openweathermap.org/img/wn/${icon4}@2x.png">`
                 );
                 $("#icon5").html(
-                    `<img src="http://openweathermap.org/img/wn/${icon5}@2x.png">`
+                    `<img src="https://openweathermap.org/img/wn/${icon5}@2x.png">`
                 );
             });
         }
