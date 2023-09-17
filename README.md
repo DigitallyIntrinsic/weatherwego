@@ -1,4 +1,4 @@
-# WheatherWeGo: A weather app
+# WeatherWeGo: A weather app
 
   [A deployed version can be viewed here.](https://digitallyintrinsic.github.io/weatherwego/)
 
