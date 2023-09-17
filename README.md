@@ -32,4 +32,4 @@ None at this time.
 
 ## Images:
 
-![Project Screenshot](./assets/images/project-screenshot.png)
+![Project Screenshot](./assets/images/weather-screenshot.png)
