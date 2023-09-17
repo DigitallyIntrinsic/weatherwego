@@ -171,11 +171,11 @@ $(document).ready(function () {
                 $("#hum4").text("Hum:" + " " + day4hum + "%");
                 $("#hum5").text("Hum:" + " " + day5hum + "%");
 
-                $("#wind1").text("Wind Speed: " + day1wind + "mph");
-                $("#wind2").text("Wind Speed: " + day2wind + "mph");
-                $("#wind3").text("Wind Speed: " + day3wind + "mph");
-                $("#wind4").text("Wind Speed: " + day4wind + "mph");
-                $("#wind5").text("Wind Speed: " + day5wind + "mph");
+                $("#wind1").text("Wind Speed: " + day1wind + " mph");
+                $("#wind2").text("Wind Speed: " + day2wind + " mph");
+                $("#wind3").text("Wind Speed: " + day3wind + " mph");
+                $("#wind4").text("Wind Speed: " + day4wind + " mph");
+                $("#wind5").text("Wind Speed: " + day5wind + " mph");
 
                 $("#icon1").html(
                     `<img src="https://openweathermap.org/img/wn/${icon1}@2x.png">`
